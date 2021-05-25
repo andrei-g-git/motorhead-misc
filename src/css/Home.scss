@@ -1,0 +1,79 @@
+@import './Variables.scss';
+
+@font-face{
+    src: $stylizedFontSource;
+    font-family: $stylizedFont;
+}
+
+#home-header{
+    position: relative;
+}
+
+#home-header-image{
+    width: 100%;
+    display: block; //<img> is inline and it adds an empty margin so I need block
+}
+
+#alternative-home-header-text{
+    font-family: $stylizedFont;
+    letter-spacing: 0.2rem;
+    text-align: center;   
+    color: white;
+    position: absolute;
+    width: 35%;
+    top: 30%;
+    left: 35%;   
+}
+
+.home-bg-with-text{
+    width: 100%;
+    position: relative;
+}
+
+.home-text-bg{
+    width: 100%;
+    display: block;
+}
+
+.paragraph-text{
+    position: absolute;
+    text-align: center;   
+    color: white;
+    width: 60%;
+    top: 20%;
+    left: 20%;
+
+    font-size: x-large;
+}
+
+.parallax-image{
+    //bk is loaded in the component inline
+    height: 400px; //400px needed so the image isn't cropped to the right on small phone screens
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* this little thing is wot does it */
+}
+
+@media (max-width: 1366px){
+    .paragraph-text{
+        font-size: medium;
+    }
+}
+
+@media (max-width: 768px){
+    #alternative-home-header-text{
+        font-size: large;
+    }   
+    .paragraph-text{
+        font-size: small;
+    }    
+}
+
+@media (max-width: 480px){
+    #alternative-home-header-text{
+        font-size: medium;
+    }  
+    .paragraph-text{
+        font-size: x-small;
+    }      
+}
